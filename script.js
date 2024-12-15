@@ -40,24 +40,17 @@ function styleCards(){
             closestIndex = index
         }
         card.classList.remove("selected-card")
-        // if(distance == 0) {
-        //     card.classList.add("test")
-        // } else {
-        //     card.classList.remove("test")
-        //     console.log("index", index, "distance", distance)
-        // }
+
         card.style.setProperty('--i', Math.round(distance));
-        card.style.setProperty("--r",(Math.round((distance - distance / 4) * 10)) / 10 + "px")
-        card.style.setProperty("--t", Math.abs((Math.round(distance / 10)) / 10))
+        card.style.setProperty("--t", Math.abs((Math.round(distance)) / 10) + "px")
     })
 
     cards.forEach((card,index)=> {
         const z = cards.length + (index < closestIndex ? index : 2*closestIndex - index)
         card.style.setProperty('--z',z);
+
     })
     closestCard.classList.add("selected-card")
-    
-    // console.log(cards[0].getBoundingClientRect().x)
 }
 
 function updatedTargetCard(){
