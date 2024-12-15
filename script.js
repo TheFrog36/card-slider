@@ -46,9 +46,9 @@ function styleCards(){
         //     card.classList.remove("test")
         //     console.log("index", index, "distance", distance)
         // }
-        card.style.setProperty('--i', distance);
+        card.style.setProperty('--i', Math.round(distance));
         card.style.setProperty("--r",(Math.round((distance - distance / 4) * 10)) / 10 + "px")
-
+        card.style.setProperty("--t", Math.abs((Math.round(distance / 10)) / 10))
     })
 
     cards.forEach((card,index)=> {
